@@ -1,0 +1,20 @@
+	<div id="userInfo">	
+	<h2>User Profile</h2>
+	<div id="userPic"></div>
+	<ul>
+		<li>Name:{{userinfo.username}}</li>
+		<li>Education:{{userinfo.education}}</li>
+		<li>Employment:{{userinfo.employment}}</li>
+	</ul>
+	
+		<form ng-submit="updateinfo()">
+  		<input type="text" placeholder="Name" ng-model="userinfo1.username"></input>
+		<br>
+		<input type="text" placeholder="Education" ng-model="userinfo1.education"></input>
+  		<br>
+		<input type="text" placeholder="Employment" ng-model="userinfo1.employment"></input>
+  		<br>
+  		<button type="submit">update</button>
+		<div>{{skill.test}}</div>
+		</form>
+	</div>

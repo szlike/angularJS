@@ -1,0 +1,76 @@
+ <!-- public/views/index.html -->
+<!doctype html>
+<html lang="en">
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<title>User Profile</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+
+<script src="../js/app.js"></script>
+<script src="../js/appRoutes.js"></script>
+<script src="../js/services/NerdService.js"></script>
+<script src="../js/services/GeekService.js"></script>
+<script src="../js/controllers/SkillCtrl.js"></script>
+<script src="../js/controllers/ProfileCtrl.js"></script>
+<script src="../js/controllers/MainCtrl.js"></script>
+<script src="../js/factories/userinfo.js"></script>
+<script src="../js/factories/skill.js"></script>
+<script src="../js/services/sessioninfo.js"></script>
+<!--<script src="lib/chartjs-directive.js"></script>
+<script src="lib/Chart.js"></script>-->
+</head>
+
+<body ng-app="ratemyskill">
+	<div id="mainpage" ng-controller="MainCtrl">
+		<button ng-click="homePage()">Main Menu</button>
+		<button ng-click="myProfilePage()">My Profile</button>
+		<button ng-click="mySkillPage()">My Skill</button>
+		<button ng-click="myFriendPage()">My Friends</button>
+	</div>
+
+	<div ng-view></div>
+
+		<!--
+		<script>
+		var radarChartData = {
+		labels: ["Java", "C++", "MySQL", "MongoDB", "JavaScript", "AngularJS", "OO Design"],
+		datasets: [
+			{
+				label: "Rated by myself",
+				fillColor: "rgba(220,220,220,0.2)",
+				strokeColor: "rgba(220,220,220,1)",
+				pointColor: "rgba(220,220,220,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(220,220,220,1)",
+				data: [5,2,5,9,4,10,4]
+			},
+			{
+				label: "Rated by others",
+				fillColor: "rgba(151,187,205,0.2)",
+				strokeColor: "rgba(151,187,205,1)",
+				pointColor: "rgba(151,187,205,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(151,187,205,1)",
+				data: [5,2,5,9,4,10,4]
+			}
+		]
+	};
+
+	window.onload = function(){
+		window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
+			responsive: true
+		});
+	}
+
+	</script>-->
+	<div style="width:30%">
+			<div ng-app="chartjs-directive">
+  				<chart value="myChart"></chart>
+			</div>
+	</div>
+  </body>
+</html>

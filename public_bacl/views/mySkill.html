@@ -1,0 +1,21 @@
+	<div>
+	<h3>Skill List</h3>	
+	<div ng-repeat="skill in skills">
+  		<button ng-click="incrementUpvotes(skill)">^</button>
+  		<a ng-show="skill.link" href="{{skill.link}}">
+			{{skill.skill}}
+  		</a>
+  		<span ng-hide="skill.link">
+    			{{skill.skill}}
+  		</span>
+  		- rate: {{skill.rate}}
+	</div>
+    <form ng-submit="addskill()">
+      <input type="text" placeholder="Skill" ng-model="skill"></input>
+    <br>
+    <input type="text" placeholder="Link" ng-model="link"></input>
+      <br>
+      <button type="submit">Add</button>
+    <div>{{skill.test}}</div>
+  </form>
+</div>

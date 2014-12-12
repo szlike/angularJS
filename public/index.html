@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<base href="/">
+
+	<title>Rate My Skill</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+
+	<!-- JS -->
+	<script src="libs/angular/angular.js"></script>
+	<script src="libs/angular-route/angular-route.min.js"></script>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/petermelias/angular-chartjs/master/src/angular-chartjs.js"></script>
+	<script src="libs/Chart.js/Chart.js"></script>-->
+	<script src="./Chart.min.js"></script>
+	<script src="./angular-chartjs.min.js"></script>
+	<!-- ANGULAR CUSTOM -->
+	<script src="js/app.js"></script>
+	<script src="js/appRoutes.js"></script>
+	<script src="js/controllers/MainCtrl.js"></script>
+	<script src="js/controllers/NerdCtrl.js"></script>
+	<script src="js/controllers/GraphCtrl.js"></script>
+	<script src="js/services/NerdService.js"></script>
+	<script src="js/controllers/GeekCtrl.js"></script>
+	<script src="js/services/GeekService.js"></script>
+	<script src="js/factories/userinfo.js"></script>
+	<script src="js/factories/skill.js"></script>
+
+	
+</head> 
+ 
+<body ng-app="sampleApp">
+	<div class="container">
+	<nav class="navbar navbar-inverse">
+		<ul class="nav navbar-nav">
+			<li><a href="/">Home</a></li>
+			<li><a href="/myProfile">My Profile</a></li>
+			<li><a href="/myFriend">My Friends</a></li>
+		
+		</ul>
+	</nav>
+
+
+<!--	<div id="mainpage" ng-controller="MainCtrl">
+		<button ng-click="homePage()">Main Menu</button>
+		<button ng-click="myProfilePage()">My Profile</button>
+		<button ng-click="mySkillPage()">My Skill</button>
+		<button ng-click="myFriendPage()">My Friends</button>
+	</div>-->
+
+		<div ng-view></div>
+
+		
+
+
+
+
+	</div>
+	<div style="width:30%">
+		<canvas id="canvas" height="450" width="450"></canvas>
+	</div>
+
+	<script>
+	var radarChartData = {
+		labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+		datasets: [
+			{
+				label: "My Skill Summary",
+				fillColor: "rgba(220,220,220,0.2)",
+				strokeColor: "rgba(220,220,220,1)",
+				pointColor: "rgba(220,220,220,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(220,220,220,1)",
+				data: [65,59,90,81,56,55,40]
+			}
+		]
+	};
+
+	window.onload = function(){
+		window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
+			responsive: true
+		});
+	}
+
+	</script>
+</body>
+
+</html>

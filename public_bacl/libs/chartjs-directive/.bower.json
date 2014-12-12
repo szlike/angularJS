@@ -1,0 +1,17 @@
+{
+  "name": "chartjs-directive",
+  "main": "./src/angular-chartjs-directive.js",
+  "dependencies": {
+    "angular": ""
+  },
+  "homepage": "https://github.com/klederson/angular-chartjs-directive",
+  "_release": "d6402b7ad2",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d6402b7ad21ddda9f4606c6fb2f01b0fe505edab"
+  },
+  "_source": "git://github.com/klederson/angular-chartjs-directive.git",
+  "_target": "*",
+  "_originalSource": "chartjs-directive"
+}

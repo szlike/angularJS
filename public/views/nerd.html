@@ -1,0 +1,55 @@
+<div  ng-controller="NerdController">
+	<div id="userInfo">	
+	<h2>User Profile</h2>
+	<div id="userPic"></div>
+	<ul>
+		<li>Name:{{userinfo.username}}</li>
+		<li>Education:{{userinfo.education}}</li>
+		<li>Employment:{{userinfo.employment}}</li>
+	</ul>
+	
+		<form ng-submit="updateinfo()">
+  		<input type="text" placeholder="Name" ng-model="userinfo1.username"></input>
+		<br>
+		<input type="text" placeholder="Education" ng-model="userinfo1.education"></input>
+  		<br>
+		<input type="text" placeholder="Employment" ng-model="userinfo1.employment"></input>
+  		<br>
+  		<button type="submit">update</button>
+		</form>
+	</div>
+
+	<div>
+	<h3>Skill List</h3>	
+	<div ng-repeat="skill in skills">
+  		<button ng-click="incrementUpvotes(skill)">^</button>
+
+  		<span>
+    			{{skill.skill}}
+  		</span>
+  		- rate: {{skill.rate}}
+	</div>
+    <form ng-submit="addskill()">
+      <input type="text" placeholder="Skill" ng-model="skill"></input>
+    <br>
+      <button type="submit">Add</button>
+  	</form>
+	</div>
+	
+<!-- 
+	<div>
+    <cjs-doughnut dataset="someData" options="someOptions" segement-stroke-width="5"></cjs-doughnut>
+
+    
+    <cjs-bar></cjs-bar>
+    <cjs-line></cjs-line>
+    <cjs-radar></cjs-radar>
+    <cjs-polar></cjs-polar>
+    <cjs-pie></cjs-pie>
+    
+</div> -->
+
+
+
+
+</div>
